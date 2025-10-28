@@ -105,7 +105,7 @@ resource "aws_eks_node_group" "devopsshack" {
   scaling_config {
     desired_size = 3
     max_size     = 3
-    min_size     = 3
+    min_size     = 1
   }
 
   instance_types = ["t3.micro"]
@@ -115,6 +115,7 @@ resource "aws_eks_node_group" "devopsshack" {
     source_security_group_ids = [aws_security_group.devopsshack_node_sg.id]
   }
 }
+
 
 resource "aws_iam_role" "devopsshack_cluster_role" {
   name = "devopsshack-cluster-role"
