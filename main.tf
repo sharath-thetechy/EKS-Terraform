@@ -105,7 +105,7 @@ resource "aws_eks_node_group" "devopsshack" {
   scaling_config {
     desired_size = 3
     max_size     = 3
-    min_size     = 1
+    min_size     = 2
   }
 
   instance_types = ["t3.micro"]
